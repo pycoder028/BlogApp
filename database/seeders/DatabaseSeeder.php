@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Post;
+use App\Models\Tag;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -20,11 +22,16 @@ class DatabaseSeeder extends Seeder
            // 'email' => 'test@example.com',
         //]);
 
-        $this->call([
+/*         $this->call([
             CategorySeeder::class,
             TagSeeder::class,
             PostSeeder::class
-        ]);
+        ]); */
+
+        foreach(Post::all() as $post){
+            $tags = Tag::take(rand(1,5))->pluck('id');
+            $post->tags()->sync($tags);
+        }
 
 
     }
