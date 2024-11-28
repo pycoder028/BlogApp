@@ -4,6 +4,10 @@
 Dashboard
 @endsection
 
+@php
+    $page = 'Dashboard'
+@endphp
+
 @section('content')
 
 <div class="row">
