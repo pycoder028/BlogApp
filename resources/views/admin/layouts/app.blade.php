@@ -9,7 +9,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        @include('admin.layouts.includes.sibenav')
+        @include('admin.layouts.includes.sidenav')
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->

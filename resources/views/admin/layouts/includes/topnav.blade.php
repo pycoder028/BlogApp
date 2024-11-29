@@ -191,7 +191,7 @@
                 <div class="dropdown-divider"></div>
                 <form action="{{ route('admin.logout') }}" method="POST">
                 @csrf
-                <button class="py-0 dropdown-item btn btn-link" type="submit"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                <button class="py-0 dropdown-item btn btn-link logout" type="submit"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                     Logout
                 </button>
 
