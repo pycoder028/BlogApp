@@ -86,7 +86,22 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        /* dd($request->all()); */
+        $category =  Category::findOrFail($id);
+
+        $request->validate([
+            'name' => 'required|unique:categories,name,'.$category->id.'|max:255',
+            'description' => 'required',
+        ]);
+
+        $data = [
+            'name' => $request->name,
+            'description' => $request->description,
+        ];
+
+        $category->update($data);
+
+        return redirect()->back();
     }
 
     /**
@@ -97,6 +112,10 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category =  Category::findOrFail($id);
+
+        $category->delete();
+
+        return redirect()->back();
     }
 }
