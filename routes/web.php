@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\PostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Admin\CategoryController;
@@ -45,5 +46,8 @@ Route::group(['middleware' => 'admin'], function() {
 
     /* category */
     Route::resource('/admin/category', CategoryController::class);
+
+    /* post */
+    Route::resource('/admin/post', PostController::class);
 
 });
