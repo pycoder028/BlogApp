@@ -34,7 +34,7 @@
 
         <li class="nav-item @if ($page == 'Posts') active @endif">
             <a class="nav-link" href={{ route('post.index') }}>
-                <i class="fas fa-fw fa-table"></i>
+                <i class="fas fa-list-ol"></i>
                 <span>Posts</span></a>
         </li>
 
